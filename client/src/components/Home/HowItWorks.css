@@ -1,0 +1,227 @@
+/* ==========================================================================
+   DESIGN TOKENS & PARAMETERS
+   ========================================================================== */
+:root {
+  --primary: #2563eb;
+  --primary-light: rgba(37, 99, 235, 0.08);
+  --primary-glow: rgba(37, 99, 235, 0.15);
+  
+  --text-title: #0f172a;
+  --text-body: #475569;
+  --text-muted: #64748b;
+  
+  --bg-main: #ffffff;
+  --bg-card: #f8fafc; /* Professional premium smooth tint */
+  --border-element: #e2e8f0;
+  
+  --shadow-normal: 0 10px 30px -10px rgb(0 0 0 / 0.04), 0 1px 3px rgb(0 0 0 / 0.02);
+  --shadow-hover: 0 25px 40px -15px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.02);
+  
+  --radius-card: 20px;
+  --radius-full: 9999px;
+  
+  --transition-bezier: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   MAIN MAIN CONTENT CONTAINER
+   ========================================================================== */
+.how-it-works {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background-color: var(--bg-main);
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+.hiw-container {
+  width: min(1150px, 92%);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   SECTION HEADING SECTION
+   ========================================================================== */
+.hiw-heading {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 60px auto;
+}
+
+.hiw-badge {
+  display: inline-block;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: var(--text-title);
+  letter-spacing: -0.03em;
+  margin-top: 14px;
+  line-height: 1.2;
+}
+
+.section-title span {
+  color: var(--primary);
+}
+
+.section-subtitle {
+  margin-top: 14px;
+  color: var(--text-body);
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   STEPS LAYOUT WITH SYSTEM FLOW CONNECTORS
+   ========================================================================== */
+.steps-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 50px;
+  position: relative;
+}
+
+/* Elegant Connector Line for Desktops */
+@media (min-width: 992px) {
+  .steps-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 56px; /* Centered with step number height */
+    left: 15%;
+    right: 15%;
+    height: 2px;
+    background-image: linear-gradient(to right, var(--border-element) 50%, rgba(255, 255, 255, 0) 0%);
+    background-position: top;
+    background-size: 12px 1px;
+    background-repeat: repeat-x;
+    z-index: 1;
+  }
+}
+
+/* ==========================================================================
+   STEP CARD DEEP DETAIL
+   ========================================================================== */
+.step-card {
+  background: var(--bg-card);
+  padding: 40px 30px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-element);
+  box-shadow: var(--shadow-normal);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s var(--transition-bezier),
+              box-shadow 0.4s var(--transition-bezier),
+              border-color 0.4s var(--transition-bezier);
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* PREMIUM RING BUBBLE COUNTER */
+.step-number-container {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-element);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-normal);
+  position: relative;
+  transition: transform 0.4s var(--transition-bezier);
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  background-color: var(--primary);
+  color: var(--bg-main);
+  font-weight: 700;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  letter-spacing: -0.01em;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+  transition: background-color 0.3s;
+}
+
+/* Micro-interaction on card hover */
+.step-card:hover .step-number-container {
+  transform: scale(1.05);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 6px var(--primary-glow);
+}
+
+.step-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-title);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.step-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 991px) {
+  .steps-wrapper {
+    grid-template-columns: 1fr; /* Stacking cards vertically on tablets/mobiles safely */
+    gap: 24px;
+    max-width: 500px;
+    margin: 40px auto 0 auto;
+  }
+  
+  .step-card {
+    padding: 32px 24px;
+  }
+}
+
+/* Strict Phone View Tuning (400px and Under/Over) */
+@media (max-width: 420px) {
+  .how-it-works {
+    padding: 50px 0;
+  }
+
+  .hiw-heading {
+    margin-bottom: 35px;
+  }
+
+  .step-card {
+    padding: 28px 20px;
+  }
+
+  .step-number-container {
+    margin-bottom: 18px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .step-number {
+    width: 42px;
+    height: 42px;
+    font-size: 0.95rem;
+  }
+}

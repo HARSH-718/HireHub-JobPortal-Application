@@ -1,0 +1,280 @@
+/* =========================================================
+   PAGINATION SECTION
+========================================================= */
+
+.pagination-section{
+    padding:70px 0 90px;
+    background:#ffffff;
+}
+
+.pagination-container{
+
+    width:92%;
+    max-width:1250px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* =========================================================
+   PREVIOUS / NEXT BUTTONS
+========================================================= */
+
+.page-btn{
+
+    height:52px;
+
+    padding:0 24px;
+
+    border:1px solid #dbe4f0;
+
+    background:#ffffff;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    color:#0f172a;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(15,23,42,.05);
+
+}
+
+.page-btn:hover{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    border-color:#2563eb;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.25);
+
+}
+
+
+/* =========================================================
+   PAGE NUMBERS
+========================================================= */
+
+.page-numbers{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.page-number{
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#f8fafc;
+
+    color:#334155;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 8px 20px rgba(15,23,42,.05);
+
+}
+
+.page-number:hover{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    transform:translateY(-3px);
+
+}
+/* =========================================================
+   ACTIVE PAGE
+========================================================= */
+
+.page-number.active{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    box-shadow:0 15px 35px rgba(37,99,235,.25);
+
+}
+
+.page-number.active:hover{
+
+    background:#1d4ed8;
+
+}
+
+
+/* =========================================================
+   BUTTON ICON ANIMATION
+========================================================= */
+
+.page-btn svg{
+
+    transition:transform .3s ease;
+
+}
+
+.page-btn:hover:first-child svg{
+
+    transform:translateX(-4px);
+
+}
+
+.page-btn:hover:last-child svg{
+
+    transform:translateX(4px);
+
+}
+
+
+/* =========================================================
+   FOCUS STATE
+========================================================= */
+
+.page-btn:focus,
+.page-number:focus{
+
+    outline:none;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.18);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:768px){
+
+    .pagination-section{
+
+        padding:60px 0 80px;
+
+    }
+
+    .pagination-container{
+
+        gap:14px;
+
+    }
+
+    .page-btn{
+
+        height:48px;
+
+        padding:0 20px;
+
+        font-size:14px;
+
+    }
+
+    .page-number{
+
+        width:46px;
+
+        height:46px;
+
+        font-size:14px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .pagination-container{
+
+        flex-direction:column;
+
+        gap:18px;
+
+    }
+
+    .page-numbers{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:10px;
+
+    }
+
+    .page-btn{
+
+        width:100%;
+
+        max-width:280px;
+
+        justify-content:center;
+
+    }
+
+}
+
+@media(max-width:400px){
+
+    .page-number{
+
+        width:42px;
+
+        height:42px;
+
+        font-size:13px;
+
+    }
+
+    .page-btn{
+
+        height:44px;
+
+        font-size:13px;
+
+    }
+
+}

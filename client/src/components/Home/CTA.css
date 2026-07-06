@@ -1,0 +1,226 @@
+/* ==========================================================================
+   DESIGN TOKENS & ACCENTS
+   ========================================================================== */
+:root {
+  --cta-bg-gradient: linear-gradient(135deg, #1e40af 0%, #1e3a8a 30%, #0f172a 100%);
+  --cta-accent-gold: #facc15;
+  --cta-accent-hover: #fde047;
+  
+  --text-light: #ffffff;
+  --text-muted-white: #e2e8f0;
+  --text-dark-btn: #0f172a;
+  
+  --shadow-btn-primary: 0 10px 25px -5px rgba(250, 204, 21, 0.3), 0 8px 10px -6px rgba(250, 204, 21, 0.2);
+  --shadow-btn-hover: 0 20px 35px -10px rgba(250, 204, 21, 0.4);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  
+  --radius-button: 12px;
+  --radius-badge: 50px;
+  
+  --transition-premium: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   MAIN SECTION INTERFACE BLOCK
+   ========================================================================== */
+.cta-section {
+  position: relative;
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: var(--cta-bg-gradient);
+  color: var(--text-light);
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Abstract Tech Aesthetics / Background Mesh Glow */
+.cta-overlay-glow {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, rgba(30, 64, 175, 0) 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cta-overlay-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center;
+  mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   CONTENT LAYOUT CONTROL
+   ========================================================================== */
+.cta-container {
+  width: min(850px, 90%);
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.cta-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-light);
+  padding: 6px 16px;
+  border-radius: var(--radius-badge);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  backdrop-filter: blur(4px);
+}
+
+.cta-title {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.cta-title span {
+  color: var(--cta-accent-gold);
+  position: relative;
+  display: inline-block;
+}
+
+.cta-description {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: var(--text-muted-white);
+  max-width: 680px;
+  margin: 0 auto 40px auto;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   INTERACTIVE PREMIUM BUTTONS
+   ========================================================================== */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+/* PRIMARY ACTION CALL */
+.btn-primary {
+  background-color: var(--cta-accent-gold);
+  color: var(--text-dark-btn);
+  padding: 16px 32px;
+  border: none;
+  border-radius: var(--radius-button);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-btn-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s var(--transition-premium),
+              background-color 0.3s var(--transition-premium),
+              box-shadow 0.3s var(--transition-premium);
+}
+
+.btn-primary svg {
+  transition: transform 0.3s var(--transition-premium);
+}
+
+.btn-primary:hover {
+  background-color: var(--cta-accent-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-btn-hover);
+}
+
+.btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+/* SECONDARY UTILITY CALL */
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--text-light);
+  padding: 16px 32px;
+  border-radius: var(--radius-button);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-glass);
+  transition: transform 0.3s var(--transition-premium),
+              background-color 0.3s var(--transition-premium),
+              border-color 0.3s var(--transition-premium);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-4px);
+}
+
+/* ==========================================================================
+   ADAPTIVE RESPONSIVE OPTIMIZATION
+   ========================================================================== */
+
+/* Strict Phone View Adjustments (480px down to 360px micro screens) */
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 60px 0;
+  }
+
+  .cta-container {
+    width: 92%;
+  }
+
+  .cta-badge {
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    margin-bottom: 18px;
+  }
+
+  .cta-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+
+  .cta-description {
+    margin-bottom: 32px;
+  }
+
+  /* Converting side-by-side elements to absolute blocks to maintain UI limits safely */
+  .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 0.95rem;
+    height: 50px;
+  }
+}

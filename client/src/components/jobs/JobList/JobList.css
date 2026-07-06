@@ -1,0 +1,416 @@
+/* =========================================================
+   JOB LIST SECTION
+========================================================= */
+
+.job-list-section{
+    padding:80px 0;
+    background:#ffffff;
+}
+
+.job-list-container{
+    width:92%;
+    max-width:1250px;
+    margin:auto;
+}
+
+/* =========================================================
+   JOB GRID
+========================================================= */
+
+.job-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:28px;
+
+}
+
+/* =========================================================
+   JOB CARD
+========================================================= */
+
+.job-item{
+
+    background:#ffffff;
+
+    border:1px solid #e5edf7;
+
+    border-radius:22px;
+
+    padding:28px;
+
+    transition:.35s;
+
+    box-shadow:0 15px 40px rgba(15,23,42,.06);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.job-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:#2563eb;
+
+    transform:scaleX(0);
+
+    transition:.35s;
+
+}
+
+.job-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 60px rgba(37,99,235,.15);
+
+}
+
+.job-item:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.job-item-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    margin-bottom:25px;
+
+}
+
+.job-item-top h5{
+
+    color:#2563eb;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.job-item-top h3{
+
+    font-size:24px;
+
+    color:#0f172a;
+
+    font-weight:700;
+
+    line-height:1.4;
+
+}
+
+/* =========================================================
+   BOOKMARK BUTTON
+========================================================= */
+
+.save-btn{
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.35s;
+
+}
+
+.save-btn svg{
+
+    font-size:17px;
+
+}
+
+.save-btn:hover{
+
+    background:#2563eb;
+
+    color:#fff;
+
+    transform:rotate(15deg);
+
+}
+/* =========================================================
+   JOB META
+========================================================= */
+
+.job-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-bottom:25px;
+
+}
+
+.job-meta span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#64748b;
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+.job-meta svg{
+
+    color:#2563eb;
+
+    font-size:15px;
+
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:30px;
+
+}
+
+.skills-list span{
+
+    padding:8px 16px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    border-radius:50px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.skills-list span:hover{
+
+    background:#2563eb;
+
+    color:#fff;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* =========================================================
+   APPLY BUTTON
+========================================================= */
+
+.apply-job-btn{
+
+    width:100%;
+
+    height:54px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(37,99,235,.20);
+
+}
+
+.apply-job-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 20px 40px rgba(37,99,235,.30);
+
+}
+
+.apply-job-btn svg{
+
+    transition:.35s;
+
+}
+
+.apply-job-btn:hover svg{
+
+    transform:translateX(6px);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:992px){
+
+    .job-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .job-list-section{
+
+        padding:70px 0;
+
+    }
+
+    .job-grid{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+    }
+
+    .job-item{
+
+        padding:24px;
+
+    }
+
+    .job-item-top h3{
+
+        font-size:22px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .job-item{
+
+        padding:20px;
+
+    }
+
+    .job-item-top{
+
+        gap:15px;
+
+    }
+
+    .job-item-top h3{
+
+        font-size:20px;
+
+    }
+
+    .job-meta{
+
+        flex-direction:column;
+
+        gap:12px;
+
+    }
+
+    .skills-list{
+
+        gap:10px;
+
+    }
+
+    .skills-list span{
+
+        font-size:13px;
+
+        padding:7px 14px;
+
+    }
+
+    .apply-job-btn{
+
+        height:50px;
+
+        font-size:15px;
+
+    }
+
+}

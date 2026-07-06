@@ -1,0 +1,177 @@
+/* ==========================================================================
+   DESIGN TOKENS & VARIABLES
+   ========================================================================== */
+:root {
+  --primary: #2563eb;
+  --primary-light: rgba(37, 99, 235, 0.08);
+  
+  --text-title: #0f172a;
+  --text-body: #475569;
+  --text-muted: #64748b;
+  
+  --bg-surface: #ffffff;
+  --bg-section: #f8fafc; /* Crisp corporate slate tint */
+  --border-subtle: #e2e8f0;
+  
+  --shadow-base: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-hover: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+  
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  --transition-corporate: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   SECTION MAIN BLOCK
+   ========================================================================== */
+.why-choose {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background-color: var(--bg-section);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.why-container {
+  width: min(1150px, 92%);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   SECTION HEADER (PRO LOOK)
+   ========================================================================== */
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 50px auto;
+}
+
+.section-badge {
+  display: inline-block;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: var(--text-title);
+  letter-spacing: -0.03em;
+  margin-top: 14px;
+  line-height: 1.2;
+}
+
+.section-title span {
+  color: var(--primary);
+}
+
+.section-subtitle {
+  margin-top: 16px;
+  color: var(--text-body);
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   DYNAMIC WHY GRID SYSTEM
+   ========================================================================== */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 24px;
+}
+
+/* ==========================================================================
+   PREMIUM COMPANY CARDS
+   ========================================================================== */
+.why-card {
+  background: var(--bg-surface);
+  padding: 36px 30px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-base);
+  text-align: left; /* Corporate standard is mostly left-aligned text for readability */
+  transition: transform 0.4s var(--transition-corporate),
+              box-shadow 0.4s var(--transition-corporate),
+              border-color 0.4s var(--transition-corporate);
+  display: flex;
+  flex-direction: column;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* BRAND CUSTOM ICON BUBBLE */
+.card-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: transform 0.3s var(--transition-corporate);
+}
+
+.why-card:hover .card-icon-wrapper {
+  transform: scale(1.05);
+}
+
+.why-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-title);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.why-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   ADAPTIVE RESPONSIVE INJECTIONS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .section-heading {
+    margin-bottom: 40px;
+  }
+  
+  .why-card {
+    padding: 30px 24px;
+  }
+}
+
+/* Ultra-mobile View Optimization (400px & below) */
+@media (max-width: 420px) {
+  .why-choose {
+    padding: 50px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .why-card {
+    text-align: center; /* Center layout looks more balanced on tiny phone screens */
+    align-items: center;
+    padding: 24px 20px;
+  }
+
+  .card-icon-wrapper {
+    margin-bottom: 18px;
+  }
+}

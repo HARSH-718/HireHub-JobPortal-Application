@@ -1,0 +1,536 @@
+/* =====================================================
+   JOB DETAILS HERO
+===================================================== */
+
+.job-details-hero{
+    padding:90px 0;
+    background:linear-gradient(180deg,#f8fbff 0%,#ffffff 100%);
+}
+
+.job-details-container{
+
+    width:92%;
+    max-width:1250px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:40px;
+
+    align-items:start;
+
+}
+
+/* =====================================================
+   LEFT CARD
+===================================================== */
+
+.job-details-left{
+
+    background:#ffffff;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    display:flex;
+
+    gap:25px;
+
+    border:1px solid #e2e8f0;
+
+    box-shadow:0 20px 60px rgba(15,23,42,.06);
+
+    transition:.35s;
+
+}
+
+.job-details-left:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 25px 70px rgba(37,99,235,.10);
+
+}
+
+/* =====================================================
+   COMPANY LOGO
+===================================================== */
+
+.company-logo{
+
+    width:90px;
+
+    height:90px;
+
+    flex-shrink:0;
+
+    border-radius:24px;
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    color:#ffffff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:38px;
+
+    font-weight:800;
+
+    box-shadow:0 20px 40px rgba(37,99,235,.25);
+
+}
+
+/* =====================================================
+   JOB INFO
+===================================================== */
+
+.job-info{
+
+    flex:1;
+
+}
+
+.verified-badge{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.job-info h1{
+
+    font-size:42px;
+
+    color:#0f172a;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+    margin-bottom:12px;
+
+}
+
+.job-info h3{
+
+    font-size:22px;
+
+    color:#475569;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+/* =====================================================
+   META
+===================================================== */
+
+.job-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:16px;
+
+}
+
+.job-meta span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:12px 18px;
+
+    border-radius:50px;
+
+    background:#f8fafc;
+
+    color:#334155;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    border:1px solid #e2e8f0;
+
+    transition:.3s;
+
+}
+
+.job-meta span:hover{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+}
+
+.job-meta svg{
+
+    font-size:15px;
+
+}
+/* =====================================================
+   RATING BOX
+===================================================== */
+
+.rating-box{
+
+    margin-top:30px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 20px;
+
+    background:#fff7ed;
+
+    border:1px solid #fed7aa;
+
+    border-radius:14px;
+
+}
+
+.rating-box svg{
+
+    color:#f59e0b;
+
+    font-size:18px;
+
+}
+
+.rating-box strong{
+
+    color:#0f172a;
+
+    font-size:18px;
+
+}
+
+.rating-box small{
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   RIGHT ACTION CARD
+===================================================== */
+
+.job-action-card{
+
+    background:#ffffff;
+
+    border-radius:24px;
+
+    padding:35px;
+
+    border:1px solid #e2e8f0;
+
+    box-shadow:0 20px 60px rgba(15,23,42,.06);
+
+    position:sticky;
+
+    top:100px;
+
+    transition:.35s;
+
+}
+
+.job-action-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 25px 70px rgba(37,99,235,.10);
+
+}
+
+.job-action-card h3{
+
+    font-size:28px;
+
+    color:#0f172a;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+.job-action-card p{
+
+    color:#64748b;
+
+    line-height:1.7;
+
+    margin-bottom:30px;
+
+}
+
+
+/* =====================================================
+   APPLY BUTTON
+===================================================== */
+
+.apply-btn{
+
+    width:100%;
+
+    height:56px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 18px 35px rgba(37,99,235,.25);
+
+}
+
+.apply-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+}
+
+.apply-btn svg{
+
+    transition:.35s;
+
+}
+
+.apply-btn:hover svg{
+
+    transform:translateX(5px);
+
+}
+
+
+/* =====================================================
+   SAVE BUTTON
+===================================================== */
+
+.save-btn{
+
+    width:100%;
+
+    height:56px;
+
+    margin-top:16px;
+
+    border:2px solid #2563eb;
+
+    background:#ffffff;
+
+    color:#2563eb;
+
+    border-radius:14px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.save-btn:hover{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+}
+
+.save-btn svg{
+
+    font-size:18px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:992px){
+
+    .job-details-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .job-action-card{
+
+        position:static;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .job-details-hero{
+
+        padding:70px 0;
+
+    }
+
+    .job-details-left{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        align-items:center;
+
+        padding:30px;
+
+    }
+
+    .job-info h1{
+
+        font-size:32px;
+
+    }
+
+    .job-info h3{
+
+        font-size:20px;
+
+    }
+
+    .job-meta{
+
+        justify-content:center;
+
+    }
+
+    .rating-box{
+
+        justify-content:center;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .job-details-left{
+
+        padding:24px;
+
+    }
+
+    .company-logo{
+
+        width:75px;
+
+        height:75px;
+
+        font-size:32px;
+
+    }
+
+    .job-info h1{
+
+        font-size:26px;
+
+    }
+
+    .job-meta{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .job-meta span{
+
+        justify-content:center;
+
+    }
+
+    .job-action-card{
+
+        padding:24px;
+
+    }
+
+    .apply-btn,
+
+    .save-btn{
+
+        height:50px;
+
+        font-size:15px;
+
+    }
+
+}
